@@ -1,8 +1,10 @@
+import 'package:ewhodas/busca_paciente.dart';
 import 'package:ewhodas/paciente_formulario.dart';
 import 'package:ewhodas/registro_paciente.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:ewhodas/recuperar_senha.dart';
+import 'package:ewhodas/busca_paciente.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class pagina_inicial extends StatefulWidget {
@@ -21,6 +23,7 @@ class _pagina_inicialState extends State<pagina_inicial> {
       ),
       backgroundColor: Colors.white,
       body: SafeArea(
+
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -118,7 +121,7 @@ class _pagina_inicialState extends State<pagina_inicial> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(builder: (_) {
-                            return recuperar_senha();
+                            return busca_paciente();
                           }),
                         );
                       },
@@ -179,7 +182,7 @@ class _pagina_inicialState extends State<pagina_inicial> {
             ],
           ),
         ),
-      ),
+    ),
     );
   }
 }
