@@ -21,6 +21,7 @@ class _cadastro_usuarioState extends State<cadastro_usuario> {
       appBar: AppBar(
         backgroundColor: Color.fromRGBO(43, 56, 97, 1),
         title: const Text(' '),
+
         actions: <Widget>[],
       ),
       backgroundColor: Colors.white,

@@ -33,11 +33,7 @@ class _HomeState extends State<Home> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      FaIcon(
-                        FontAwesomeIcons.language,
-                        size: 50,
-                        color: Color.fromRGBO(43, 56, 97, 1),
-                      ),
+
                       FaIcon(
                         FontAwesomeIcons.instagram,
                         size: 50,
