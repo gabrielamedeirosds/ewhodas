@@ -24,7 +24,7 @@
         android:name="io.flutter.app.FlutterApplication"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/launcher_icon"
         android:label="ewhodas_app" >
         <activity
             android:name="medeiros.com.ewhodas_app.MainActivity"

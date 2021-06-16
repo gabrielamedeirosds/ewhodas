@@ -1,6 +1,8 @@
 import 'package:ewhodas/pagina_inicial.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:ewhodas/termos.dart';
+
 
 class cadastro_usuario extends StatefulWidget {
   @override
@@ -15,13 +17,14 @@ class _cadastro_usuarioState extends State<cadastro_usuario> {
   final _formKey =
       GlobalKey<FormState>(); //key do formulario (identifica o form)
 
+  bool checkBoxValue = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color.fromRGBO(43, 56, 97, 1),
         title: const Text(' '),
-
         actions: <Widget>[],
       ),
       backgroundColor: Colors.white,
@@ -74,6 +77,31 @@ class _cadastro_usuarioState extends State<cadastro_usuario> {
                 senha("Senha"),
                 senha("Confirme a senha"),
                 Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 10),
+                  child: Row(
+                    children: <Widget>[
+                      Checkbox(
+                          value: checkBoxValue,
+                          onChanged: (bool value) {
+                            setState(() {
+                              if (_formKey.currentState.validate()) {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (_) {
+                                return termos();
+                              }),
+                            );
+                          }
+                              checkBoxValue = value;
+                            });
+                          }
+
+                          ),
+                      Text("Aceito os Termos e Condições"),
+                    ],
+                  ),
+                ),
+                Padding(
                   padding: EdgeInsets.only(top: 40.0, bottom: 50.0, right: 130),
                   child: Container(
                     height: 50.0,
@@ -85,13 +113,16 @@ class _cadastro_usuarioState extends State<cadastro_usuario> {
                     ),
                     child: FlatButton(
                       onPressed: () {
-                        if (_formKey.currentState.validate()) {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (_) {
-                              return pagina_inicial();
-                            }),
-                          );
+                        if(checkBoxValue == true) {
+                          print("ok");
+                          if (_formKey.currentState.validate()) {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (_) {
+                                return pagina_inicial();
+                              }),
+                            );
+                          }
                         }
                       },
                       child: Text(
@@ -154,8 +185,7 @@ class _cadastro_usuarioState extends State<cadastro_usuario> {
         children: [
           Text(
             q,
-            style:
-            TextStyle(
+            style: TextStyle(
                 color: Colors.black,
                 fontSize: 14,
                 fontWeight: FontWeight.normal),

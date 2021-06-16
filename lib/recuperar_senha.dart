@@ -1,4 +1,5 @@
 import 'package:ewhodas/pagina_inicial.dart';
+import 'package:ewhodas/tela_de_login.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -90,7 +91,7 @@ class _recuperar_senhaState extends State<recuperar_senha> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(builder: (_) {
-                          return pagina_inicial();
+                          return Home();
                         }),
                       );
                     },

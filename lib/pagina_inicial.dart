@@ -6,11 +6,18 @@ import 'package:flutter/cupertino.dart';
 import 'package:ewhodas/recuperar_senha.dart';
 import 'package:ewhodas/busca_paciente.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:ewhodas/cif.dart';
+
+
+
 
 class pagina_inicial extends StatefulWidget {
   @override
   _pagina_inicialState createState() => _pagina_inicialState();
 }
+
+
+
 
 class _pagina_inicialState extends State<pagina_inicial> {
   @override
@@ -23,7 +30,6 @@ class _pagina_inicialState extends State<pagina_inicial> {
       ),
       backgroundColor: Colors.white,
       body: SafeArea(
-
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -97,7 +103,7 @@ class _pagina_inicialState extends State<pagina_inicial> {
                               height: 10.0,
                             ),
                             Text(
-                              "Formulário\nWHODAS",
+                              "WHODAS",
                               style: TextStyle(
                                   color: Color.fromRGBO(88, 98, 143, 1),
                                   fontSize: 20.0,
@@ -139,7 +145,9 @@ class _pagina_inicialState extends State<pagina_inicial> {
                             Text(
                               "Busque seus\npacientes",
                               style: TextStyle(
-                                  color: Color.fromRGBO(88, 98, 143, 1), fontSize: 20.0, fontWeight: FontWeight.bold),
+                                  color: Color.fromRGBO(88, 98, 143, 1),
+                                  fontSize: 20.0,
+                                  fontWeight: FontWeight.bold),
                               textAlign: TextAlign.center,
                             ),
                           ],
@@ -150,8 +158,9 @@ class _pagina_inicialState extends State<pagina_inicial> {
                       onTap: () {
                         Navigator.push(
                           context,
+                          
                           MaterialPageRoute(builder: (_) {
-                            return recuperar_senha();
+                            return cif();
                           }),
                         );
                       },
@@ -169,7 +178,9 @@ class _pagina_inicialState extends State<pagina_inicial> {
                             Text(
                               "Consulte o CIF",
                               style: TextStyle(
-                                  color: Color.fromRGBO(88, 98, 143, 1), fontSize: 20.0,fontWeight: FontWeight.bold),
+                                  color: Color.fromRGBO(88, 98, 143, 1),
+                                  fontSize: 20.0,
+                                  fontWeight: FontWeight.bold),
                               textAlign: TextAlign.center,
                             ),
                           ],
@@ -182,7 +193,7 @@ class _pagina_inicialState extends State<pagina_inicial> {
             ],
           ),
         ),
-    ),
+      ),
     );
   }
 }
