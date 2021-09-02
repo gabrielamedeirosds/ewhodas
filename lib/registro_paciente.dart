@@ -54,16 +54,16 @@ class _registro_pacienteState extends State<registro_paciente> {
                   ),
                 ),
                 questao("Nome Completo"),
-                questao("Idade"),
-                questao("Data de Nascimento"),
-                questao("Contato"),
+                questao_numero("Idade"),
+                questao_numero("Data de Nascimento"),
+                questao_numero("Telefone"),
+                questao("Email"),
                 questao("Sexo"),
-                questao("Etilista"),
+                questao("Consumo de álcool pelo menos 1 vez na semana?"),
                 questao("Tabagista"),
                 questao("Escolaridade"),
-                questao("Procedência, capital ou interior?"),
                 questao("Cidade"),
-                questao("Renda Familiar"),
+                questao_numero("Renda Familiar"),
 
 
 
@@ -120,6 +120,44 @@ class _registro_pacienteState extends State<registro_paciente> {
             height: 5.0,
           ),
           TextFormField(
+            // keyboardType: TextInputType.number,
+            minLines: 1,
+            maxLines: 4,
+            // expands: true,
+            decoration: InputDecoration(
+              border: OutlineInputBorder(),
+              labelStyle: TextStyle(
+                  color: Color.fromRGBO(88, 98, 143, 1), fontSize: 14),
+            ),
+            textAlign: TextAlign.left,
+            style: TextStyle(
+                color: Colors.black, fontSize: 14, fontWeight: FontWeight.bold),
+          ),
+          SizedBox(
+            height: 20.0,
+          ),
+        ],
+      ),
+    );
+  }
+    Widget questao_numero(String q) {
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 20.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            q,
+            style: TextStyle(
+                color: Color.fromRGBO(88, 98, 143, 1),
+                fontSize: 14,
+                fontWeight: FontWeight.normal),
+          ),
+          SizedBox(
+            height: 5.0,
+          ),
+          TextFormField(
+            keyboardType: TextInputType.number,
             minLines: 1,
             maxLines: 4,
             // expands: true,
@@ -155,11 +193,7 @@ class _registro_pacienteState extends State<registro_paciente> {
           SizedBox(
             height: 5.0,
           ),
-          RadioListTile(value: "A", groupValue: null, onChanged: null),
-          RadioListTile(value: "A", groupValue: null, onChanged: null) ,
-          RadioListTile(value: "A", groupValue: null, onChanged: null) ,
-          RadioListTile(value: "A", groupValue: null, onChanged: null) ,
-          RadioListTile(value: "A", groupValue: null, onChanged: null) ,
+         
 
           SizedBox(
             height: 20.0,
