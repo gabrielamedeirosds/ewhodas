@@ -77,6 +77,7 @@ const basePerguntas = [
     'tipo': TipoPergunta.extenso,
     'pesos': [],
     'dominio': '',
+    
   },
   {
     'enunciado':

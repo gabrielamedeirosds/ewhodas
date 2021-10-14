@@ -6,7 +6,7 @@ class Pergunta {
   //int id;
   List pesos;
   String dominio;
-  int resposta = 0; //tirar esse zero, foi so pra testar sem ter que apretar todos os itens
+  int resposta; //tirar esse zero, foi so pra testar sem ter que apretar todos os itens
   String respostaExtenso;
 
   Pergunta(
@@ -129,11 +129,6 @@ class Resultado {
   }
 
   static double gerarDo52(List<Pergunta> d52Perguntas) {
-    // Mesma função para todos os domínios
-    // for (int i = 0; i < perguntas.length; i++) {
-    //   var index = perguntas[i].resposta;
-    //   var item = perguntas[i];
-    //   if (item.dominio == "d52") {
     var soma = 0;
     for (var item in d52Perguntas) {
       int index = item.resposta;
@@ -155,8 +150,9 @@ class Resultado {
         print(item.pesos);
         soma = soma + item.pesos[index];
       }
-      return soma * 100 / 24;
+      print("soma ${soma}");
     }
+      return soma * 100/24;
   }
 
   gerarRespostaSemTrabalhoRemunerado() {

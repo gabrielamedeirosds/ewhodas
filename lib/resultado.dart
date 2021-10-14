@@ -8,7 +8,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 class PaginaResultado extends StatefulWidget {
   final Map<String, dynamic> resultado;
 
-
   const PaginaResultado({Key key, this.resultado}) : super(key: key);
   @override
   PaginaResultadoState createState() => PaginaResultadoState();
@@ -29,81 +28,135 @@ class PaginaResultadoState extends State<PaginaResultado> {
           child: Column(
             children: [
               Container(
+                padding: new EdgeInsets.only(top: 40.0, left: 25),
                 width: 300,
                 height: 200,
-                padding: new EdgeInsets.all(10.0),
-                  child:ListView.builder(
-                      itemCount: widget.resultado["perguntasEscritas"].length,
-                      itemBuilder: (context, i) => Text("${widget.resultado["perguntasEscritas"][i]}",),
-                    ),
-                ),
-              Container(
-                width: 300,
-                height: 200,
-                padding: new EdgeInsets.all(10.0),
-                child: Card(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15.0),
-                  ),
-                  color: Colors.blue,
-                  elevation: 10,
-                  child: Text(
-                    "O resultado do domínio 1 é: ${widget.resultado["resDo1"]}",
-                    style: TextStyle(
-                      fontSize: 25,
-                      color: Colors.black,
-                    ),
+                child: ListView.builder(
+                  itemCount: widget.resultado["perguntasEscritas"].length,
+                  itemBuilder: (context, i) => Text(
+                    "${widget.resultado["perguntasEscritas"][i]}",
+                    style: TextStyle(fontSize: 25, color: Colors.black),
                   ),
                 ),
               ),
               Container(
+                padding: new EdgeInsets.only(left: 25.0),
+                width: 350,
                 child: Text(
-                  "O resultado do domínio 2 é: ${widget.resultado["resDo2"]}",
+                  "Domínio de Cognição: ${widget.resultado["resDo1"]}",
+                  textAlign: TextAlign.right,
                   style: TextStyle(
                     fontSize: 25,
                     color: Colors.black,
                   ),
                 ),
               ),
+              SizedBox(
+                width: 10,
+                height: 10,
+              ),
               Container(
+                padding: new EdgeInsets.only(left: 15.0),
+                width: 350,
+                //padding: new EdgeInsets.only(top: 90.0),
                 child: Text(
-                  "O resultado do domínio 3 é: ${widget.resultado["resDo3"]}",
+                  "Domínio de Mobilidade: ${widget.resultado["resDo2"]}",
+                  textAlign: TextAlign.right,
                   style: TextStyle(
                     fontSize: 25,
                     color: Colors.black,
                   ),
                 ),
               ),
+              SizedBox(
+                width: 10,
+                height: 10,
+              ),
               Container(
+                padding: new EdgeInsets.only(left: 16.0),
+                width: 320,
                 child: Text(
-                  "O resultado do domínio 4 é: ${widget.resultado["resDo4"]}",
+                  "Domínio de Auto-cuidado: ${widget.resultado["resDo3"]}",
+                  textAlign: TextAlign.right,
+                  style: TextStyle(
+                    fontSize: 25,
+                    color: Colors.black,
+                  ),
+                ),
+              ),SizedBox(
+                width: 10,
+                height: 10,
+              ),
+              Container(
+                padding: new EdgeInsets.only(left: 15.0),
+                width: 350,
+                child: Text(
+                  "Domínio de Relações Interpessoais: ${widget.resultado["resDo4"]}",
+                  textAlign: TextAlign.right,
                   style: TextStyle(
                     fontSize: 25,
                     color: Colors.black,
                   ),
                 ),
               ),
+              SizedBox(
+                width: 10,
+                height: 10,
+              ),
               Container(
+                padding: new EdgeInsets.only(left: 25.0),
+                width: 350,
                 child: Text(
-                  "O resultado do domínio 5.1 é: ${widget.resultado["resDo51"]}",
+                  "Domínio de Atividades Domésticas: ${widget.resultado["resDo51"]}",
+                  textAlign: TextAlign.right,
                   style: TextStyle(
                     fontSize: 25,
                     color: Colors.black,
                   ),
                 ),
               ),
+              SizedBox(
+                width: 10,
+                height: 10,
+              ),
               Container(
+                padding: new EdgeInsets.only(left: 25.0),
+                width: 350,
                 child: Text(
-                  "O resultado do domínio 5.2 é: ${widget.resultado["resDo52"]}",
+                  "Domínio de Atividades escolares ou do trabalho: ${widget.resultado["resDo52"]}",
+                  textAlign: TextAlign.right,
                   style: TextStyle(
                     fontSize: 25,
                     color: Colors.black,
                   ),
                 ),
               ),
+              SizedBox(
+                width: 10,
+                height: 10,
+              ),
               Container(
+                padding: new EdgeInsets.only(left: 5.0),
+                width: 350,
                 child: Text(
-                  "O resultado do domínio 6 é: ${widget.resultado["resDo6"]}",
+                  "Domínio de Participação: ${widget.resultado["resDo6"]}",
+                  textAlign: TextAlign.right,
+                  style: TextStyle(
+                    fontSize: 25,
+                    color: Colors.black,
+                  ),
+                ),
+              ),
+              SizedBox(
+                width: 10,
+                height: 10,
+              ),
+              Container(
+                padding: new EdgeInsets.only(left: 5.0),
+                width: 350,
+                child: Text(
+                  "Total: ${widget.resultado["resDo6"]}",
+                  textAlign: TextAlign.right,
                   style: TextStyle(
                     fontSize: 25,
                     color: Colors.black,

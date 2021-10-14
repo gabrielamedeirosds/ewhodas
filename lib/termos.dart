@@ -62,7 +62,7 @@ Caso queira dar um feedback sobre o e-WHODAS, tenha dúvidas ou precise tratar d
                     child: new Text('Aceito',
                         style: Theme.of(context)
                             .textTheme
-                            .subhead
+                            .headline1
                             .copyWith(color: Colors.white))),
               ],
             ),
